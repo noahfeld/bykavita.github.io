@@ -1,0 +1,164 @@
+/*
+ *
+ * UNSET STYLE
+ *
+ */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and text decoration
+*/
+* {
+    margin: 0;
+    text-decoration: none;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+    font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+    isolation: isolate;
+}
+
+/*
+ *
+ * SET STYLE
+ *
+ */
+
+html {
+    min-height: 320px;
+    min-width: 350px;
+}
+
+* {
+}
+
+a {
+    color: inherit;
+}
+
+/*
+ *
+ * FONTS
+ *
+ */
+
+@font-face {
+    font-family: "Overpass";
+    src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Urbanist";
+    src: url("../assets/fonts/Urbanist/Urbanist-VariableFont_wght.ttf") format('truetype');
+}
+
+/*
+ *
+ * COLORS
+ *
+ */
+
+:root {
+    --primary: #490B3D;
+    --secondary: #BD1E51;
+    --neutral: #F9D1D7;
+    --background: #e8cece;
+}
+
+/*
+ *
+ * COMMON STYLING
+ *
+ */
+
+/* SET BACKGROUND COLOR */
+body {
+    background-color: whitesmoke;
+}
+
+/* SET FONT */
+h1 {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 34px;
+
+    font-weight: 400;
+}
+
+h2 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+h3 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+
+    font-weight: 700;
+}
+
+h4 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+h5 {
+    font-family: 'Overpass', sans-serif;
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+p {
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+b {
+    font-weight: bold;
+}
