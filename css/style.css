@@ -99,10 +99,10 @@ a {
  */
 
 :root {
-    --primary: #490B3D;
-    --secondary: #BD1E51;
-    --neutral: #F9D1D7;
-    --background: #e8cece;
+    --primary: #000000;
+    --secondary: rgba(20, 41, 126, 0.57);
+    --neutral: #ffffff;
+    --background: #ffffff;
 }
 
 /*
@@ -119,46 +119,242 @@ body {
 /* SET FONT */
 h1 {
     font-family: 'Urbanist', sans-serif;
-    font-size: 34px;
+    font-size: 18px;
 
-    font-weight: 400;
+    font-weight: 600;
 }
 
 h2 {
     font-family: 'Overpass', sans-serif;
-    font-size: 22px;
+    font-size: 16px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h3 {
     font-family: 'Overpass', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h4 {
     font-family: 'Overpass', sans-serif;
     font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 h5 {
     font-family: 'Overpass', sans-serif;
     font-size: 10px;
 
-    font-weight: 700;
+    font-weight: 600;
 }
 
 p {
     font-family: 'Overpass', sans-serif;
-    font-size: 16px;
+    font-size: 12px;
 
     font-weight: 500;
 }
 
 b {
     font-weight: bold;
+}
+
+/* HEADER STYLING */
+
+/*
+ *
+ * SMALL SCREENS
+ *
+ */
+@media screen and (max-width: 900px) {
+    header {
+        background-color: whitesmoke;
+
+        padding: 25px 25px 10px;
+    }
+
+    .header-flex-container {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header-flex-item:nth-child(2) {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    .header-flex-item:nth-child(3) {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    .header-flex-item:nth-child(4) {
+        width: 0;
+        height: 0;
+        display: none;
+    }
+
+    .sub-header-flex-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    .sub-header-flex-item {
+        color: var(--primary);
+        text-align: justify;
+        text-align-last: justify;
+    }
+
+    .sub-header-flex-item b {
+        color: var(--secondary);
+    }
+
+    /* TITLE STYLING */
+    #title {
+        width: 160px;
+    }
+
+    #title a img {
+        max-width: 100%; /* Ensures the image doesn't exceed the div's width */
+        height: auto; /* Automatically adjusts height to maintain aspect ratio */
+        display: block;
+    }
+
+    #subtitle {
+        display: inline;
+        font-weight: 500;
+
+        width: 160px;
+    }
+
+    /* LINK STYLING */
+    .link {
+        color: var(--secondary);
+        border-style: unset;
+    }
+}
+
+/*
+ *
+ * MEDIUM/LARGE SCREENS
+ *
+ */
+
+@media screen and (min-width: 901px) {
+    /* HEADER STYLING */
+    header {
+        background-color: whitesmoke;
+
+        position: fixed;
+        width: 285px;
+        padding: 100px 50px 100px 75px;
+
+        min-height: 320px;
+        height: 100%;
+    }
+
+    .header-flex-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    .header-flex-item {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .sub-header-flex-container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    .sub-header-flex-item {
+        color: var(--primary);
+        text-align: justify;
+        text-align-last: justify;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sub-header-flex-item b {
+        color: var(--secondary);
+    }
+
+    .sub-header-flex-container:last-child {
+        row-gap: 5px;
+    }
+
+    .sub-header-flex-container:last-child > .sub-header-flex-item {
+        color: var(--secondary);
+    }
+
+    .sub-header-flex-container:last-child > .sub-header-flex-item > a {
+        color: var(--primary);
+    }
+
+    #title {
+        /* IMAGE TITLE */
+        /*max-width: 200px;*/
+    }
+
+    #title a {
+        min-width: 100%;
+    }
+
+    /* IMAGE TITLE */
+    #title a img {
+        max-width: 100%; /* Ensures the image doesn't exceed the div's width */
+        height: auto; /* Automatically adjusts height to maintain aspect ratio */
+        display: block;
+    }
+
+    #subtitle {
+        display: inline;
+        font-weight: 500;
+    }
+
+    /* NAV STYLING */
+    .nav-flex-container {
+        flex-grow: 1;
+
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+
+    .nav-flex-item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align-last: justify;
+
+    }
+
+    ol {
+        padding-left: 20px;
+        font-family: 'Overpass', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    li {
+        text-align-last: right;
+    }
+
+    /* LINKS STYLING */
+    .link {
+        color: var(--secondary);
+    }
 }
