@@ -121,7 +121,6 @@ html, body {
 
     .body-flex-item:first-child {
         flex: 0 0 235px;
-        z-index: 1;
     }
 
     .body-flex-item:last-child {

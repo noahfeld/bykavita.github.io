@@ -88,8 +88,18 @@ a {
 }
 
 @font-face {
+    font-family: "EB Garamond";
+    src: url("../assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
     font-family: "Urbanist";
     src: url("../assets/fonts/Urbanist/Urbanist-VariableFont_wght.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Arvo";
+    src: url("../assets/fonts/Arvo/Arvo-Regular.ttf") format('truetype');
 }
 
 /*
@@ -119,23 +129,23 @@ body {
 /* SET FONT */
 h1 {
     font-family: 'Urbanist', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 
-    font-weight: 600;
+    font-weight: 800;
 }
 
 h2 {
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 16px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h3 {
     font-family: 'Overpass', sans-serif;
     font-size: 14px;
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h4 {
@@ -153,7 +163,7 @@ h5 {
 }
 
 p {
-    font-family: 'Overpass', sans-serif;
+    font-family: 'Arvo', serif;
     font-size: 12px;
 
     font-weight: 500;

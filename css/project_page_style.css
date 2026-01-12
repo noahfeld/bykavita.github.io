@@ -77,13 +77,11 @@ b {
     flex-flow: row wrap;
     column-gap: 20px;
     row-gap: 10px;
-    justify-content: space-around;
 
     margin-top: 10px;
 }
 
 .festival {
-    flex: 1 1 auto;
     text-align: left;
 }
 
