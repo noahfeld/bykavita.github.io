@@ -175,23 +175,19 @@ b {
 
 /* HEADER STYLING */
 
+header {
+    z-index: 100;
+}
+
 .active {
     transform: translateX(8px);
     color: var(--secondary);
     border-color: var(--secondary);
-    border-bottom: 1px solid var(--secondary);
 }
 
 li:hover {
     transform: translateX(8px);
     color: var(--secondary);
-}
-
-li:active {
-    transform: translateX(8px);
-    color: var(--secondary);
-    border-color: var(--secondary);
-    border-bottom: 1px solid var(--secondary);
 }
 
 /*
@@ -380,10 +376,11 @@ li:active {
 
         border-right: 1px solid var(--primary);
         border-top: 1px solid var(--primary);
+        border-bottom: 1px solid var(--primary);
         margin-bottom: 4px;
         padding-right: 4px;
         padding-top: 2px;
 
-        transition: transform 0.3s ease;
+        transition: 0.3s ease;
     }
 }

@@ -63,13 +63,13 @@ b {
 #film-role {
     flex: 1 0 auto;
 
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 #film-release {
     flex: 0 0 auto;
 
-    margin-top: 10px;
+    margin-top: 5px;
     text-align: right;
 }
 
@@ -78,7 +78,7 @@ b {
 }
 
 #film-logline {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .extra-content {
@@ -86,7 +86,7 @@ b {
 }
 
 #film-festivals {
-    margin-top: 20px;
+    margin-top: 5px;
     text-align: left;
 }
 
