@@ -25,13 +25,17 @@ img {
     height: auto;
 }
 
+.film-title {
+    font-family: Overpass, sans-serif;
+}
+
 /*
  *
  * SMALL SCREENS
  *
  */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     /* BODY STYLING */
     .body-flex-container {
         color: var(--primary);
@@ -89,7 +93,7 @@ img {
  *
  */
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 951px) {
     /* BODY STYLING */
     .body-flex-container {
         color: var(--primary);
@@ -105,7 +109,7 @@ img {
     }
 
     .body-flex-item:nth-child(1) {
-        flex: 0 1 235px;
+        flex: 0 1 200px;
     }
 
     .body-flex-item:nth-child(2) {
@@ -118,8 +122,8 @@ img {
 
         display: flex;
         flex-flow: row wrap;
-        column-gap: 20px;
-        row-gap: 50px;
+        column-gap: 50px;
+        row-gap: 25px;
         justify-content: space-around;
     }
 
