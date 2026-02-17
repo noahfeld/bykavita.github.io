@@ -4,16 +4,6 @@
  *
  */
 
-/* SET HOVERABLE */
-.hoverable {
-    transition-duration: 0.3s;
-    transition-property: padding-right, opacity, color;
-}
-
-.hoverable:hover {
-    color: var(--secondary);
-}
-
 b {
     color: var(--secondary);
 }
@@ -69,7 +59,6 @@ img {
 
 
         transform: translate(var(--x), var(--y));
-        transition: transform 0.3s ease;
     }
 
     .section-media {
@@ -79,7 +68,6 @@ img {
         --s: 1;
 
         transform: scale(var(--s));
-        transition: transform 0.3s ease;
     }
 
     .section-content {
@@ -138,9 +126,16 @@ img {
         --x: 0px;
         --y: 0px;
 
+        padding: 20px;
+        border: 1px solid transparent;
 
         transform: translate(var(--x), var(--y));
-        transition: transform 0.3s ease;
+    }
+
+    .section-flex-item.active {
+        color: var(--secondary);
+        border: 1px solid var(--primary);
+        box-shadow: 2px 2px var(--primary);
     }
 
     .section-media {
@@ -150,7 +145,6 @@ img {
         --s: 1;
 
         transform: scale(var(--s));
-        transition: transform 0.3s ease;
     }
 
     .section-content {

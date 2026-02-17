@@ -173,21 +173,28 @@ b {
     font-weight: bold;
 }
 
+/* SET HOVERABLE */
+
+.hoverable {
+    transition: 0.3s ease-in-out;
+}
+
 /* HEADER STYLING */
 
 header {
     z-index: 100;
 }
 
-.active {
+li.active {
     transform: translateX(8px);
     color: var(--secondary);
     border-color: var(--secondary);
 }
 
-li:hover {
+li.hoverable:hover {
     transform: translateX(8px);
     color: var(--secondary);
+    border-color: var(--secondary);
 }
 
 /*

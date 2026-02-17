@@ -4,16 +4,6 @@
  *
  */
 
-/* SET HOVERABLE */
-.hoverable {
-    transition-duration: 0.3s;
-    transition-property: padding-right, opacity, color;
-}
-
-.hoverable:hover {
-    color: var(--secondary);
-}
-
 b {
     color: var(--secondary);
 }
