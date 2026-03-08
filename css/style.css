@@ -109,7 +109,7 @@ a {
  */
 
 :root {
-    --primary: #000000;
+    --primary: rgba(0, 0, 0, 1);
     --secondary: rgba(51, 59, 85, 0.68);
     --neutral: #ffffff;
     --background: #ffffff;
@@ -173,6 +173,12 @@ b {
     font-weight: bold;
 }
 
+li {
+    font-family: 'Overpass', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+}
+
 /* SET HOVERABLE */
 
 .hoverable {
@@ -195,6 +201,22 @@ li.hoverable:hover {
     transform: translateX(8px);
     color: var(--secondary);
     border-color: var(--secondary);
+}
+
+#press>a:hover {
+    color: var(--secondary);
+}
+
+#press>a.active {
+    color: var(--secondary);
+}
+
+#bio>a:hover {
+    color: var(--secondary);
+}
+
+#press>a.active {
+    color: var(--secondary);
 }
 
 /*
@@ -262,15 +284,6 @@ li.hoverable:hover {
         font-weight: 500;
 
         width: 160px;
-    }
-
-    /* LINK STYLING */
-    .link {
-        color: var(--primary);
-    }
-
-    .link:hover {
-        color: var(--secondary);
     }
 }
 
@@ -369,14 +382,10 @@ li.hoverable:hover {
 
     ol {
         padding-left: 15px;
-        font-family: 'Overpass', sans-serif;
-        font-size: 12px;
         font-weight: 700;
     }
 
     li {
-        font-size: 12px;
-        font-weight: 500;
         color: #333333;
         text-align: right;
         text-align-last: right;

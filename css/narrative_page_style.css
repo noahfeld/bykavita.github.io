@@ -151,8 +151,6 @@ b {
     /* BODY STYLING */
     .body-flex-container {
         color: var(--primary);
-
-        position: fixed;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;

@@ -19,6 +19,35 @@ img {
     font-family: Overpass, sans-serif;
 }
 
+.section-flex-item.active {
+    color: var(--secondary);
+}
+
+.section-media {
+    position: relative;
+    will-change: transform;
+    transform-origin: center;
+}
+
+.preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    opacity: 0;
+    transition: opacity .2s ease;
+}
+
+.section-flex-item.active .section-media .preview {
+    opacity: 1;
+}
+
+.section-flex-item.active .section-media .thumb {
+    opacity: 0;
+}
+
 /*
  *
  * SMALL SCREENS
@@ -106,13 +135,12 @@ img {
 
     /* SECTION STYLING */
     .section-flex-container {
-        padding: 20px;
-
+        align-items: start;
+        justify-content: center;
         display: flex;
         flex-flow: row wrap;
-        column-gap: 50px;
+        column-gap: 25px;
         row-gap: 25px;
-        justify-content: space-around;
     }
 
     .section-flex-item {
@@ -127,24 +155,8 @@ img {
         --y: 0px;
 
         padding: 20px;
-        border: 1px solid transparent;
 
         transform: translate(var(--x), var(--y));
-    }
-
-    .section-flex-item.active {
-        color: var(--secondary);
-        border: 1px solid var(--primary);
-        box-shadow: 2px 2px var(--primary);
-    }
-
-    .section-media {
-        will-change: transform;
-        transform-origin: center;
-
-        --s: 1;
-
-        transform: scale(var(--s));
     }
 
     .section-content {
