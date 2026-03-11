@@ -4,10 +4,6 @@
  *
  */
 
-b {
-    color: var(--secondary);
-}
-
 img {
     max-width: 300px;
     max-height: 300px;
@@ -42,10 +38,6 @@ img {
 
 .section-flex-item.active .section-media .preview {
     opacity: 1;
-}
-
-.section-flex-item.active .section-media .thumb {
-    opacity: 0;
 }
 
 /*

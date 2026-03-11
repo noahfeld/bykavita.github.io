@@ -1,3 +1,30 @@
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+        mobileMenuOverlay.classList.add('open');
+    });
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuOverlay.classList.remove('open');
+    });
+    mobileMenuOverlay.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuOverlay.classList.remove('open');
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 950) {
+            mobileMenu.classList.remove('open');
+            mobileMenuOverlay.classList.remove('open');
+        }
+    });
+}
+
 const activeGroups = new Set();
 
 document.querySelectorAll('.hover-item').forEach(item => {
