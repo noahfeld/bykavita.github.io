@@ -6,9 +6,9 @@
     <title>BY KAVITA | PONDEROSA</title>
     <meta name="description" content="project 1 desc">
     <link href="../assets/icons/favicon.png" rel="icon" type="image/x-icon">
-    <link href="../css/style.css" rel="stylesheet">
-    <link href="../css/project_page_style.css" rel="stylesheet">
-    <link href="../css/narrative_page_style.css" rel="stylesheet">
+    <link href="../css/header_style.css" rel="stylesheet">
+    <link href="../css/main_style.css" rel="stylesheet">
+    <link href="../css/narrative_style.css" rel="stylesheet">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -117,27 +117,29 @@
 <div class="body-flex-container">
     <!-- HEADER OUTLINE -->
     <div class="body-flex-item"></div>
-
-    <div class="sub-body-flex-container body-flex-item">
-        <div class="media-container sub-body-flex-item">
-            <img src="../assets/ponderosa/P-Thumbnail.png" alt="Ponderosa" style="width:100%;height:auto;display:block;">
-        </div>
-        <div class="content-container sub-body-flex-item">
-            <div class="content-flex-item" id="film-title">
-                <h4>NARRATIVE</h4>
-                <h3>PONDEROSA</h3>
-                <h5>DIRECTOR</h5>
+    <!-- MAIN CONTENT -->
+    <div class="main-flex-container body-flex-item">
+        <div class="main-flex-row">
+            <div class="media-container sub-body-flex-item">
+                <img src="../assets/ponderosa/P-Thumbnail.png" alt="Ponderosa" style="width:100%;height:auto;display:block;">
             </div>
-            <div class="content-flex-item" id="film-logline">
-                <h4>LOGLINE</h4>
-                <p>
-                    A young woman attempts to survive alone in the woods amidst ongoing psychosis.
-                </p>
+            <div class="content-container sub-body-flex-item">
+                <div class="content-flex-item" id="film-title">
+                    <h4>NARRATIVE</h4>
+                    <h3>PONDEROSA</h3>
+                    <h5>DIRECTOR</h5>
+                </div>
+                <div class="content-flex-item" id="film-logline">
+                    <h4>LOGLINE</h4>
+                    <p>
+                        A young woman attempts to survive alone in the woods amidst ongoing psychosis.
+                    </p>
+                </div>
             </div>
         </div>
 
         <!-- STILLS GRID -->
-        <div class="stills-section sub-body-flex-item">
+        <div class="main-flex-row stills-section">
             <div class="stills-grid">
                 <a class="still-item" href="#" data-index="0">
                     <img src="../assets/ponderosa/Stills/P-Still-01.png" alt="Ponderosa still 1" loading="lazy">
@@ -196,8 +198,6 @@
             </div>
         </div>
     </div>
-    <!-- BUFFER -->
-    <div class="body-flex-item"></div>
 </div>
 
 <!-- LIGHTBOX OVERLAY -->

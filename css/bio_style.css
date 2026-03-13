@@ -1,0 +1,16 @@
+.main-flex-row {
+    flex: 0 1 600px;
+
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.bio-image {
+    max-height: 180px;
+}
+
+.bio-image img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+}

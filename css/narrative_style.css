@@ -5,22 +5,7 @@
  *
  */
 
-.sub-body-flex-item {
-    background-color: whitesmoke;
-}
-
-/* Remove borders from content items on narrative pages */
-.content-flex-item {
-    border: none;
-    padding-left: 0;
-}
-
 /* STILLS GRID */
-.stills-section {
-    flex: 1 1 100%;
-    margin-top: 20px;
-}
-
 .stills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -98,26 +83,13 @@
     flex: 1 1 100%;
 }
 
-#film-role {
-    flex: 1 0 auto;
-
-    margin-top: 5px;
-}
-
-#film-release {
-    flex: 0 0 auto;
-
-    margin-top: 5px;
-    text-align: right;
-}
-
 #film-cast {
     margin-top: 5px;
 }
 
 #film-logline {
     flex: 1 1 100%;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .extra-content {
@@ -125,7 +97,7 @@
 }
 
 #film-festivals {
-    margin-top: 5px;
+    margin-top: 15px;
     text-align: left;
 }
 
@@ -150,4 +122,50 @@
 
 .festival-break {
     flex: 1 1;
+}
+
+/*
+ *
+ * SMALL SCREENS
+ *
+ */
+@media screen and (max-width: 950px) {
+    .main-flex-row {
+        flex: 0 1 600px;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        row-gap: 10px;
+    }
+
+    #film-logline {
+        margin-top: 15px;
+    }
+
+    .stills-grid {
+        margin-top: 10px;
+    }
+}
+
+/*
+ *
+ * LARGE SCREENS
+ *
+ */
+@media screen and (min-width: 951px) {
+    .main-flex-row {
+        flex: 0 1 1000px;
+
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .media-container {
+        flex: 0 1 60%;
+    }
+
+    .content-container {
+        flex: 0 2 40%;
+    }
 }

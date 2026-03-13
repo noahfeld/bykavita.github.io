@@ -267,6 +267,11 @@ li.hoverable:hover {
     gap: 5px;
 }
 
+.mobile-menu-contact h5 {
+    display: flex;
+    justify-content: space-between;
+}
+
 .mobile-menu.open {
     transform: translateX(0);
 }
@@ -331,7 +336,7 @@ li.hoverable:hover {
     .header-flex-container {
         display: flex;
         flex-flow: row nowrap;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
     }
 
