@@ -154,11 +154,16 @@
  *
  */
 @media screen and (min-width: 951px) {
+    .main-flex-container {
+        row-gap: 20px;
+    }
+
     .main-flex-row {
         flex: 0 1 1000px;
 
         display: flex;
         flex-flow: row nowrap;
+        column-gap: 20px;
     }
 
     .media-container {

@@ -73,12 +73,7 @@ html, body {
     }
 
     .main-flex-container {
-        row-gap: 20px;
         margin-top: 20px;
         margin-bottom: 20px;
-    }
-
-    .main-flex-row {
-        column-gap: 20px;
     }
 }

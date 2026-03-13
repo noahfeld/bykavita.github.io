@@ -1,0 +1,74 @@
+#project-title {
+
+}
+
+#project-brief {
+    margin-top: 15px;
+}
+
+#project-overview {
+
+}
+
+#project-strategy {
+    margin-top: 15px;
+}
+
+#project-testimonials {
+
+}
+
+.content-flex-item ul {
+    padding-left: 15px;
+}
+
+.content-flex-item li {
+    text-align: left;
+    text-align-last: left;
+    font-family: 'Arvo', serif;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+/*
+ *
+ * SMALL SCREENS
+ *
+ */
+@media screen and (max-width: 950px) {
+    .main-flex-row {
+        flex: 0 1 600px;
+
+        display: flex;
+        flex-flow: column nowrap;
+
+        row-gap: 10px;
+    }
+}
+
+/*
+ *
+ * LARGE SCREENS
+ *
+ */
+@media screen and (min-width: 951px) {
+    .main-flex-container {
+        row-gap: 20px;
+    }
+
+    .main-flex-row {
+        flex: 0 1 1000px;
+
+        display: flex;
+        flex-flow: row nowrap;
+        column-gap: 20px;
+    }
+
+    .media-container {
+        flex: 0 1 60%;
+    }
+
+    .content-container {
+        flex: 0 2 40%;
+    }
+}
