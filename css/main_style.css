@@ -1,6 +1,6 @@
 /*
  *
- * BIO PAGE STYLING
+ * MAIN LAYOUT — shared across all content pages
  *
  */
 
@@ -10,8 +10,7 @@ html, body {
 }
 
 .hoverable {
-    transition-duration: 0.3s;
-    transition-property: padding-right, opacity, color;
+    transition: 0.3s ease-in-out;
 }
 
 .hoverable:hover {

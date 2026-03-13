@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>BY KAVITA | COMMERCIAL PROJECT</title>
-    <meta name="description" content="project 1 desc">
-    <link href="assets/icons/favicon.png" rel="icon" type="image/x-icon">
+    <meta name="description" content="Healthy Gamer — Kavita Parekh directed and produced Dr. K's Guides, a 400-episode premium mental health education series that reached over 100,000 viewers worldwide.">
+    <link href="../assets/icons/favicon.png" rel="icon" type="image/x-icon">
     <link href="../css/header_style.css" rel="stylesheet">
     <link href="../css/main_style.css" rel="stylesheet">
     <link href="../css/branded_style.css" rel="stylesheet">
@@ -216,61 +216,6 @@
     </div>
 </div>
 
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script src="js/flickity.pkgd.min.js"></script>
 <script src="../js/script.js"></script>
-<script>
-    (function () {
-        const overlay = document.getElementById('lightbox-overlay');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('lightbox-close');
-        const prevBtn = document.getElementById('lightbox-prev');
-        const nextBtn = document.getElementById('lightbox-next');
-        const stills = Array.from(document.querySelectorAll('.still-item'));
-        let current = 0;
-
-        function open(index) {
-            current = index;
-            lightboxImg.src = stills[current].querySelector('img').src;
-            overlay.classList.add('active');
-        }
-
-        function close() {
-            overlay.classList.remove('active');
-        }
-
-        function prev() {
-            current = (current - 1 + stills.length) % stills.length;
-            lightboxImg.src = stills[current].querySelector('img').src;
-        }
-
-        function next() {
-            current = (current + 1) % stills.length;
-            lightboxImg.src = stills[current].querySelector('img').src;
-        }
-
-        stills.forEach((still, i) => {
-            still.addEventListener('click', function (e) {
-                e.preventDefault();
-                open(i);
-            });
-        });
-
-        closeBtn.addEventListener('click', close);
-        prevBtn.addEventListener('click', prev);
-        nextBtn.addEventListener('click', next);
-
-        overlay.addEventListener('click', function (e) {
-            if (e.target === overlay) close();
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (!overlay.classList.contains('active')) return;
-            if (e.key === 'Escape') close();
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-        });
-    })();
-</script>
 </body>
 </html>

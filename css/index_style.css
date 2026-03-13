@@ -144,9 +144,6 @@ img {
         padding: 25px 25px 25px 50px;
     }
 
-    .body-flex-item {
-    }
-
     .body-flex-item:nth-child(1) {
         flex: 0 1 200px;
     }
