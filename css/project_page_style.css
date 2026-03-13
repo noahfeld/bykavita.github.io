@@ -12,9 +12,9 @@
     justify-content: center;
     align-items: flex-start;
 
-    margin-top: 20px;
-    margin-bottom: 20px;
-    column-gap: 20px;
+    column-gap: 40px;
+    row-gap: 40px;
+    padding: 40px;
     background-color: whitesmoke;
 }
 
@@ -24,21 +24,28 @@
 
 .media-container {
     background-color: whitesmoke;
+    max-width: 550px;
 }
 
 .content-container {
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
 }
 
 .content-flex-item {
-    border-top: 1px solid var(--primary);
-    border-left: 1px solid var(--primary);
-
     padding-top: 4px;
     padding-left: 6px;
     padding-bottom: 4px;
+}
+
+.content-flex-item ul {
+    padding-left: 15px;
+}
+
+.content-flex-item li {
+    text-align: left;
+    text-align-last: left;
+    font-size: 12px;
 }
 
 /* PROJECT-SPECIFIC IDS */
@@ -57,6 +64,10 @@
 
 #project-strategy {
     margin-top: 5px;
+}
+
+#project-overview {
+    flex: 1 1 100%;
 }
 
 /*

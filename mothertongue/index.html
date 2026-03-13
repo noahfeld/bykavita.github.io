@@ -105,6 +105,11 @@
         <h4 class="nav-flex-item"><a class="hoverable" href="#">PRESS</a></h4>
         <h4 class="nav-flex-item"><a class="hoverable" href="../bio/index.html">BIO</a></h4>
     </nav>
+    <div class="mobile-menu-contact">
+        <h5>e: <a href="mailto:kavita@bykavita.com" target="_blank">kavita@bykavita.com</a></h5>
+        <h5>p: <a href="tel:+1-111-111-1111" target="_blank">(111) 111-1111</a></h5>
+        <h5>ig: <a href="https://www.instagram.com/bykavita/" target="_blank">@bykavita</a></h5>
+    </div>
 </div>
 <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
 
@@ -114,93 +119,18 @@
     <div class="body-flex-item"></div>
 
     <div class="sub-body-flex-container body-flex-item">
+        <!-- PITCH DECK -->
         <div class="media-container sub-body-flex-item">
-            <div style="background-color:black;margin-bottom:5px;padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/852534002?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Sorry Grandpa Hsiao"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+            <iframe src="../assets/mothertongue/MT-Pitch-Desk.pdf#toolbar=0&navpanes=0" style="width:100%;height:80vh;border:none;background:whitesmoke;"></iframe>
         </div>
         <div class="content-container sub-body-flex-item">
             <div class="content-flex-item" id="film-title">
-                <h4>NARRATIVE</h4>
+                <h4>UPCOMING NARRATIVE</h4>
                 <h3>MOTHERTONGUE</h3>
+                <h5>DIRECTOR</h5>
             </div>
-            <div class="content-flex-item" id="film-role">
-                <h4>ROLE</h4>
-                <h3>DIRECTOR</h3>
-            </div>
-            <div class="content-flex-item" id="film-release">
-                <h4><b>RELEASE:</b> 06.2023</h4>
-                <h4><b>LENGTH:</b> 00:12:53</h4>
-            </div>
-            <div class="content-flex-item" id="film-logline">
-                <h4>LOGLINE</h4>
-                <p>
-                    Desperate for a promotion, a Chinese American woman enlists her "perfect" brother to help
-                    exploit her grandpa's death anniversary for a workplace AAPI heritage month social takeover.
-                </p>
-            </div>
-            <div id="film-festivals" class="content-flex-item">
-                <h4>FILM FESTIVALS</h4>
-                <div class="festivals-container">
-                    <div class="festival">
-                        <p>
-                            ‣ Tribeca Film Festival
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ Austin Film Festival
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ DC Shorts Film Festival
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ Miami Film Festival
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ NewFilmmakers Los Angeles
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ Seattle Asian American Film Festival
-                        </p>
-                    </div>
-                    <div class="festival">
-                        <p>
-                            ‣ DisOrient Asian American Festival of Oregon
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- STILLS GRID -->
-        <!-- Replace src values with actual still image paths (e.g. assets/mothertongue/MT-Still-1.jpg) -->
-        <div class="stills-section sub-body-flex-item">
-            <div class="stills-grid">
-                <a class="still-item" href="#" data-index="0">
-                    <img src="assets/mothertongue/MT-Still-1.jpg" alt="Mothertongue still 1" loading="lazy">
-                </a>
-                <a class="still-item" href="#" data-index="1">
-                    <img src="assets/mothertongue/MT-Still-2.jpg" alt="Mothertongue still 2" loading="lazy">
-                </a>
-                <a class="still-item" href="#" data-index="2">
-                    <img src="assets/mothertongue/MT-Still-3.jpg" alt="Mothertongue still 3" loading="lazy">
-                </a>
-                <a class="still-item" href="#" data-index="3">
-                    <img src="assets/mothertongue/MT-Still-4.jpg" alt="Mothertongue still 4" loading="lazy">
-                </a>
-                <a class="still-item" href="#" data-index="4">
-                    <img src="assets/mothertongue/MT-Still-5.jpg" alt="Mothertongue still 5" loading="lazy">
-                </a>
-                <a class="still-item" href="#" data-index="5">
-                    <img src="assets/mothertongue/MT-Still-6.jpg" alt="Mothertongue still 6" loading="lazy">
-                </a>
+            <div class="content-flex-item" id="film-extra">
+                <p>supported by Tasveer x Netflix Film Fund - coming October 2026</p>
             </div>
         </div>
     </div>
@@ -208,69 +138,6 @@
     <div class="body-flex-item"></div>
 </div>
 
-<!-- LIGHTBOX OVERLAY -->
-<div class="lightbox-overlay" id="lightbox-overlay">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
-    <img id="lightbox-img" src="" alt="Still">
-    <span class="lightbox-next" id="lightbox-next">&#10095;</span>
-</div>
-
-<script src="https://player.vimeo.com/api/player.js"></script>
-<script src="js/flickity.pkgd.min.js"></script>
 <script src="../js/script.js"></script>
-<script>
-    (function () {
-        const overlay = document.getElementById('lightbox-overlay');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const closeBtn = document.getElementById('lightbox-close');
-        const prevBtn = document.getElementById('lightbox-prev');
-        const nextBtn = document.getElementById('lightbox-next');
-        const stills = Array.from(document.querySelectorAll('.still-item'));
-        let current = 0;
-
-        function open(index) {
-            current = index;
-            lightboxImg.src = stills[current].querySelector('img').src;
-            overlay.classList.add('active');
-        }
-
-        function close() {
-            overlay.classList.remove('active');
-        }
-
-        function prev() {
-            current = (current - 1 + stills.length) % stills.length;
-            lightboxImg.src = stills[current].querySelector('img').src;
-        }
-
-        function next() {
-            current = (current + 1) % stills.length;
-            lightboxImg.src = stills[current].querySelector('img').src;
-        }
-
-        stills.forEach((still, i) => {
-            still.addEventListener('click', function (e) {
-                e.preventDefault();
-                open(i);
-            });
-        });
-
-        closeBtn.addEventListener('click', close);
-        prevBtn.addEventListener('click', prev);
-        nextBtn.addEventListener('click', next);
-
-        overlay.addEventListener('click', function (e) {
-            if (e.target === overlay) close();
-        });
-
-        document.addEventListener('keydown', function (e) {
-            if (!overlay.classList.contains('active')) return;
-            if (e.key === 'Escape') close();
-            if (e.key === 'ArrowLeft') prev();
-            if (e.key === 'ArrowRight') next();
-        });
-    })();
-</script>
 </body>
 </html>
