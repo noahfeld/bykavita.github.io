@@ -116,6 +116,7 @@
 }
 
 #film-logline {
+    flex: 1 1 100%;
     margin-top: 5px;
 }
 
