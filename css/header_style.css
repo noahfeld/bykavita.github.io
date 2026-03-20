@@ -1,192 +1,8 @@
 /*
  *
- * UNSET STYLE
+ * HEADER / SIDEBAR STYLING
  *
  */
-
-/*
-  1. Use a more-intuitive box-sizing model.
-*/
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/*
-  2. Remove default margin and text decoration
-*/
-* {
-    margin: 0;
-    text-decoration: none;
-}
-
-/*
-  Typographic tweaks!
-  3. Add accessible line-height
-  4. Improve text rendering
-*/
-body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-}
-
-/*
-  5. Improve media defaults
-*/
-img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-}
-
-/*
-  6. Remove built-in form typography styles
-*/
-input, button, textarea, select {
-    font: inherit;
-}
-
-/*
-  7. Avoid text overflows
-*/
-p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-}
-
-/*
-  8. Create a root stacking context
-*/
-#root, #__next {
-    isolation: isolate;
-}
-
-/*
- *
- * SET STYLE
- *
- */
-
-html {
-    min-height: 320px;
-    min-width: 350px;
-}
-
-a {
-    color: inherit;
-}
-
-b {
-    color: var(--secondary);
-}
-
-/*
- *
- * FONTS
- *
- */
-
-@font-face {
-    font-family: "Overpass";
-    src: url("../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "EB Garamond";
-    src: url("../assets/fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "Urbanist";
-    src: url("../assets/fonts/Urbanist/Urbanist-VariableFont_wght.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "Arvo";
-    src: url("../assets/fonts/Arvo/Arvo-Regular.ttf") format('truetype');
-}
-
-/*
- *
- * COLORS
- *
- */
-
-:root {
-    --primary: rgba(0, 0, 0, 1);
-    --secondary: rgba(51, 59, 85, 0.68);
-    --neutral: #ffffff;
-    --background: #ffffff;
-}
-
-/*
- *
- * COMMON STYLING
- *
- */
-
-/* SET BACKGROUND COLOR */
-body {
-    background-color: whitesmoke;
-}
-
-/* SET FONT */
-h1 {
-    font-family: 'Urbanist', sans-serif;
-    font-size: 16px;
-
-    font-weight: 800;
-}
-
-h2 {
-    font-family: 'Urbanist', sans-serif;
-    font-size: 16px;
-
-    font-weight: 700;
-}
-
-h3 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 14px;
-
-    font-weight: 700;
-}
-
-h4 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 12px;
-
-    font-weight: 600;
-}
-
-h5 {
-    font-family: 'Overpass', sans-serif;
-    font-size: 10px;
-
-    font-weight: 600;
-}
-
-p {
-    font-family: 'Arvo', serif;
-    font-size: 12px;
-
-    font-weight: 500;
-}
-
-b {
-    font-weight: bold;
-}
-
-li {
-    font-family: 'Overpass', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-}
-
-/* SET HOVERABLE */
-
-.hoverable {
-    transition: 0.3s ease-in-out;
-}
-
-/* HEADER STYLING */
 
 header {
     z-index: 100;
@@ -374,14 +190,13 @@ li.hoverable:hover {
         text-align-last: justify;
     }
 
-    /* TITLE STYLING */
     #title {
         width: 160px;
     }
 
     #title a img {
-        max-width: 100%; /* Ensures the image doesn't exceed the div's width */
-        height: auto; /* Automatically adjusts height to maintain aspect ratio */
+        max-width: 100%;
+        height: auto;
         display: block;
     }
 
@@ -400,7 +215,6 @@ li.hoverable:hover {
  */
 
 @media screen and (min-width: 951px) {
-    /* HEADER STYLING */
     header {
         background-color: whitesmoke;
 
@@ -453,19 +267,13 @@ li.hoverable:hover {
         color: var(--primary);
     }
 
-    #title {
-        /* IMAGE TITLE */
-        /*max-width: 200px;*/
-    }
-
     #title a {
         min-width: 100%;
     }
 
-    /* IMAGE TITLE */
     #title a img {
-        max-width: 100%; /* Ensures the image doesn't exceed the div's width */
-        height: auto; /* Automatically adjusts height to maintain aspect ratio */
+        max-width: 100%;
+        height: auto;
         display: block;
     }
 

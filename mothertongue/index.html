@@ -5,7 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>BY KAVITA | NARRATIVE PROJECT</title>
     <meta name="description" content="Mothertongue — an upcoming narrative feature directed by Kavita Parekh. Supported by the Tasveer x Netflix Film Fund. Coming October 2026.">
-    <link href="assets/icons/favicon.png" rel="icon" type="image/x-icon">
+    <!-- <link href="assets/icons/favicon.png" rel="icon" type="image/x-icon"> -->
+    <link href="../css/common_style.css" rel="stylesheet">
     <link href="../css/header_style.css" rel="stylesheet">
     <link href="../css/main_style.css" rel="stylesheet">
     <link href="../css/narrative_style.css" rel="stylesheet">
@@ -66,13 +67,10 @@
     <!-- CONTACT/SOCIALS -->
     <div class="sub-header-flex-container header-flex-item">
         <h5 class="sub-header-flex-item" id="email">
-            e: <a href="mailto:kavita@bykavita.com" target="_blank">kavita@bykavita.com</a>
-        </h5>
-        <h5 class="sub-header-flex-item" id="phone">
-            p: <a href="tel:+13614896949" target="_blank">(361) 489-6949</a>
+            <b>e:</b> <a href="mailto:kavita@bykavita.com" target="_blank">kavita@bykavita.com</a>
         </h5>
         <h5 class="sub-header-flex-item" id="instagram">
-            ig: <a href="https://www.instagram.com/bykavita/" target="_blank">@bykavita</a>
+            <b>ig:</b> <a href="https://www.instagram.com/kavitahaha_" target="_blank">@kavitahaha_</a>
         </h5>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Open menu">
@@ -106,9 +104,8 @@
         <h4 class="nav-flex-item"><a class="hoverable" href="../bio/index.html">BIO</a></h4>
     </nav>
     <div class="mobile-menu-contact">
-        <h5>e: <a href="mailto:kavita@bykavita.com" target="_blank">kavita@bykavita.com</a></h5>
-        <h5>p: <a href="tel:+13614896949" target="_blank">(361) 489-6949</a></h5>
-        <h5>ig: <a href="https://www.instagram.com/bykavita/" target="_blank">@bykavita</a></h5>
+        <h5><b>e:</b> <a href="mailto:kavita@bykavita.com" target="_blank">kavita@bykavita.com</a></h5>
+        <h5><b>ig:</b> <a href="https://www.instagram.com/kavitahaha_" target="_blank">@kavitahaha_</a></h5>
     </div>
 </div>
 <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
@@ -121,13 +118,19 @@
     <div class="main-flex-container body-flex-item">
         <div class="main-flex-row">
             <!-- PITCH DECK -->
-            <div class="media-container row-flex-item">
-                <iframe src="../assets/mothertongue/MT-Pitch-Desk.pdf#toolbar=0&navpanes=0" style="width:100%;height:80vh;border:none;background:whitesmoke;"></iframe>
+            <div class="media-container row-flex-item" id="pdf-container">
+                <canvas id="pdf-canvas" style="width:100%;display:block;"></canvas>
+                <div id="pdf-controls">
+                    <button class="pdf-btn" id="pdf-prev">&#10094;</button>
+                    <span id="pdf-page-info"></span>
+                    <button class="pdf-btn" id="pdf-next">&#10095;</button>
+                    <button class="pdf-btn" id="pdf-fullscreen">&#x26F6;</button>
+                </div>
             </div>
             <div class="content-container row-flex-item">
                 <div class="content-flex-item" id="film-title">
                     <h4>UPCOMING NARRATIVE</h4>
-                    <h3>MOTHERTONGUE</h3>
+                    <h3><b>MOTHERTONGUE</b></h3>
                     <h5>DIRECTOR</h5>
                 </div>
                 <div class="content-flex-item extra-content">
@@ -139,5 +142,68 @@
 </div>
 
 <script src="../js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+    const canvas = document.getElementById('pdf-canvas');
+    const ctx = canvas.getContext('2d');
+    let pdfDoc = null;
+    let currentPage = 1;
+    let rendering = false;
+
+    const container = document.getElementById('pdf-container');
+
+    function getScale(naturalViewport) {
+        if (document.fullscreenElement) {
+            const scaleW = window.screen.width / naturalViewport.width;
+            const scaleH = (window.screen.height - 50) / naturalViewport.height;
+            return Math.min(scaleW, scaleH);
+        }
+        return canvas.parentElement.clientWidth / naturalViewport.width;
+    }
+
+    function renderPage(num) {
+        if (rendering) return;
+        rendering = true;
+        pdfDoc.getPage(num).then(function (page) {
+            const naturalViewport = page.getViewport({ scale: 1 });
+            const viewport = page.getViewport({ scale: getScale(naturalViewport) });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+            page.render({ canvasContext: ctx, viewport: viewport }).promise.then(function () {
+                rendering = false;
+            });
+            document.getElementById('pdf-page-info').textContent = num + ' / ' + pdfDoc.numPages;
+            document.getElementById('pdf-prev').disabled = num <= 1;
+            document.getElementById('pdf-next').disabled = num >= pdfDoc.numPages;
+        });
+    }
+
+    pdfjsLib.getDocument('../assets/mothertongue/MT-Pitch-Desk.pdf').promise.then(function (pdf) {
+        pdfDoc = pdf;
+        renderPage(currentPage);
+    });
+
+    document.getElementById('pdf-prev').addEventListener('click', function () {
+        if (currentPage > 1) { currentPage--; renderPage(currentPage); }
+    });
+    document.getElementById('pdf-next').addEventListener('click', function () {
+        if (currentPage < pdfDoc.numPages) { currentPage++; renderPage(currentPage); }
+    });
+
+    document.getElementById('pdf-fullscreen').addEventListener('click', function () {
+        if (!document.fullscreenElement) {
+            container.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+    document.addEventListener('fullscreenchange', function () {
+        rendering = false;
+        renderPage(currentPage);
+    });
+</script>
 </body>
 </html>

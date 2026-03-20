@@ -1,3 +1,40 @@
+/* VIDEO SWAP CONTROLS */
+#video-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 0 4px;
+}
+
+#video-page-info {
+    font-family: 'Overpass', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: center;
+}
+
+.video-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--primary);
+    padding: 2px 6px;
+    transition: color 0.2s ease;
+}
+
+.video-btn:hover {
+    color: var(--secondary);
+}
+
+.video-btn:disabled {
+    opacity: 0.25;
+    cursor: default;
+}
+
 #project-brief {
     margin-top: 15px;
 }
@@ -54,10 +91,10 @@
     }
 
     .media-container {
-        flex: 1 1 30%;
+        flex: 0 1 280px;
     }
 
     .content-container {
-        flex: 3 1 40%;
+        flex: 0 1 360px;
     }
 }

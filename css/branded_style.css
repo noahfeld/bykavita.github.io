@@ -37,8 +37,8 @@
         row-gap: 10px;
     }
 
-    #project-overview {
-        margin-top: 10px;
+    #project-brief {
+        margin-bottom: 10px;
     }
 
     #project-strategy {
@@ -73,16 +73,16 @@
         column-gap: 20px;
     }
 
+    .double-video {
+        flex-wrap: wrap;
+    }
+
     .media-container {
-        flex: 1 1 60%;
+        flex: 2 3 350px;
     }
 
     .content-container {
-        flex: 1 1 40%;
-    }
-
-    #project-overview {
-        margin-top: 15px;
+        flex: 1 1 300px;
     }
 
     #project-strategy {
