@@ -29,7 +29,7 @@
 
         display: flex;
         flex-flow: column nowrap;
-
+        align-items: center;
         row-gap: 10px;
     }
 }
@@ -49,14 +49,15 @@
 
         display: flex;
         flex-flow: row nowrap;
-        column-gap: 20px;
+        justify-content: center;
+        column-gap: 30px;
     }
 
     .media-container {
-        flex: 0 1 60%;
+        flex: 1 1 30%;
     }
 
     .content-container {
-        flex: 0 2 40%;
+        flex: 3 1 40%;
     }
 }
