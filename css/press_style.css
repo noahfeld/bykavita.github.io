@@ -1,0 +1,43 @@
+.main-flex-container {
+    flex: 1 1 auto;
+    align-content: center;
+}
+
+.main-flex-row {
+    flex: 0 1 700px;
+
+    display: flex;
+    flex-flow: row nowrap;
+
+    column-gap: 20px;
+}
+
+.row-flex-item p {
+    margin-bottom: 5px;
+}
+
+.press-section-title {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.press-item {
+    margin-bottom: 10px;
+}
+
+.press-pub {
+    display: block;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.press-item a {
+    text-decoration: none;
+}
+
+.press-item a:hover {
+    color: var(--secondary);
+}

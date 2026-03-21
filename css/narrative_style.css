@@ -163,6 +163,15 @@
     margin-top: 5px;
 }
 
+#film-info {
+    margin-top: 15px;
+}
+
+#film-info p {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
 #film-logline {
     flex: 1 1 100%;
     margin-top: 15px;
