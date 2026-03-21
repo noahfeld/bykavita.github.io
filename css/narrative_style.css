@@ -172,6 +172,12 @@
     font-size: 12px;
 }
 
+#film-info b {
+    text-transform: uppercase;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+}
+
 #film-logline {
     flex: 1 1 100%;
     margin-top: 15px;
@@ -179,6 +185,18 @@
 
 .extra-content {
     margin-top: 5px;
+}
+
+#film-press {
+    margin-top: 15px;
+}
+
+#film-press p {
+    margin-top: 5px;
+}
+
+#film-press a:hover {
+    color: var(--secondary);
 }
 
 #film-festivals {

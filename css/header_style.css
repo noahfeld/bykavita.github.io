@@ -194,6 +194,11 @@ li.hoverable:hover {
         width: 160px;
     }
 
+    #title a {
+        display: flex;
+        justify-content: space-between;
+    }
+
     #title a img {
         max-width: 100%;
         height: auto;
@@ -269,6 +274,8 @@ li.hoverable:hover {
 
     #title a {
         min-width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     #title a img {
