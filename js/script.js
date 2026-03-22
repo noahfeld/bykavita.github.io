@@ -25,6 +25,21 @@ if (menuToggle) {
     });
 }
 
+const isMobile = window.innerWidth <= 950;
+
+// Autoplay all non-2TTM videos on mobile
+if (isMobile) {
+    document.querySelectorAll('.hover-item[data-hover]').forEach(item => {
+        if (item.dataset.hover === 'group7') return;
+        const video = item.querySelector('video');
+        if (video) {
+            video.setAttribute('autoplay', '');
+            video.load();
+            video.play().catch(() => {});
+        }
+    });
+}
+
 const activeGroups = new Set();
 
 document.querySelectorAll('.hover-item').forEach(item => {
@@ -78,6 +93,8 @@ document.querySelectorAll('.hover-item').forEach(item => {
 
                 const video = el.querySelector('video');
                 if (video) {
+                    // On mobile, keep autoplaying videos (except 2TTM) running
+                    if (isMobile && group !== 'group7') return;
                     video.pause();
                     video.currentTime = 0;
                 }
