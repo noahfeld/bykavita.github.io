@@ -40,6 +40,12 @@ img {
     opacity: 1;
 }
 
+@media screen and (max-width: 950px) {
+    .mobile-autoplay .section-media .preview {
+        opacity: 1;
+    }
+}
+
 /*
  *
  * MOBILE SCREENS
