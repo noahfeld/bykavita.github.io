@@ -81,6 +81,28 @@
     color: var(--secondary);
 }
 
+/* LAURELS GRID */
+.laurels-section {
+    margin-bottom: 4px;
+}
+
+.laurels-grid {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.laurel-item {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 /* STILLS GRID */
 .stills-grid {
     display: grid;
