@@ -87,11 +87,12 @@
 }
 
 .laurels-grid {
+    width: 100%;
     display: flex;
     flex-flow: row wrap;
     gap: 8px;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .laurel-item {
