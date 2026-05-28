@@ -211,14 +211,25 @@
 }
 
 #film-press {
-    margin-top: 15px;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 22px;
 }
 
-#film-press p {
-    margin-top: 5px;
+#film-press .press-item {
+    margin-top: 8px;
 }
 
-#film-press a:hover {
+#film-press .press-pub {
+    display: block;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    opacity: 0.6;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+#film-press .press-item a:hover {
     color: var(--secondary);
 }
 
@@ -282,6 +293,7 @@
 @media screen and (min-width: 951px) {
     .main-flex-container {
         row-gap: 20px;
+        align-content: center;
     }
 
     .main-flex-row {
