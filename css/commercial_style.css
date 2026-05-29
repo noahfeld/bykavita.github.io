@@ -84,7 +84,7 @@
     }
 
     .main-flex-row {
-        flex: 0 1 1000px;
+        flex: 1 1 auto;
 
         display: flex;
         flex-flow: row nowrap;
@@ -93,7 +93,7 @@
     }
 
     .media-container {
-        flex: 0 1 280px;
+        flex: 1 1 75%;
     }
 
     .content-container {
