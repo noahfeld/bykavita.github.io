@@ -26,7 +26,8 @@ li.hoverable:hover {
     color: var(--secondary);
 }
 
-#bio>a:hover {
+#bio>a:hover,
+#bio>a.active {
     color: var(--secondary);
 }
 
@@ -99,6 +100,11 @@ li.hoverable:hover {
 .mobile-menu ol {
     padding-left: 15px;
     font-weight: 700;
+}
+
+.mobile-menu li.active {
+    transform: translateX(8px);
+    color: var(--secondary);
 }
 
 .mobile-menu li {

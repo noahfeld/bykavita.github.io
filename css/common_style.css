@@ -164,7 +164,7 @@ li {
 }
 
 .hoverable {
-    transition: 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .hoverable:hover {

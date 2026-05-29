@@ -93,3 +93,48 @@ document.querySelectorAll('.hover-item').forEach(item => {
     });
 
 });
+
+// MASONRY GRID (index page only)
+// Uses ResizeObserver so spans update automatically on image load and resize.
+// align-items:start on the grid means getBoundingClientRect().height always
+// returns actual content height (not grid-area height), so no reset needed.
+(function () {
+    var grid = document.querySelector('.section-flex-container');
+    if (!grid) return;
+
+    var GAP = 47; // visual gap between cards (px)
+    var ro  = null;
+
+    function setSpan(item) {
+        var h = item.getBoundingClientRect().height;
+        if (!h) return;
+        item.style.gridRowEnd = 'span ' + Math.ceil(h + GAP);
+    }
+
+    function clearSpans() {
+        grid.querySelectorAll('.section-flex-item').forEach(function (i) {
+            i.style.gridRowEnd = '';
+        });
+    }
+
+    function startObserver() {
+        if (ro || !window.ResizeObserver) return;
+        ro = new ResizeObserver(function (entries) {
+            if (window.innerWidth <= 950) return;
+            entries.forEach(function (e) { setSpan(e.target); });
+        });
+        grid.querySelectorAll('.section-flex-item').forEach(function (item) {
+            ro.observe(item);
+        });
+    }
+
+    if (window.innerWidth > 950) startObserver();
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth <= 950) {
+            clearSpans();
+        } else {
+            startObserver(); // no-op if already started
+        }
+    });
+})();

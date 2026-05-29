@@ -83,6 +83,7 @@
 
 /* LAURELS GRID */
 .laurels-section {
+    margin-top: 40px;
     margin-bottom: 4px;
 }
 
@@ -92,7 +93,7 @@
     flex-flow: row wrap;
     gap: 8px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .laurel-item {
@@ -191,7 +192,11 @@
 }
 
 #film-info p {
-    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 12px;
+    margin-top: 2px;
     font-size: 12px;
 }
 
@@ -211,20 +216,23 @@
 }
 
 #film-press {
-    width: 100%;
-    padding-left: 20px;
-    padding-right: 22px;
+    margin-top: 25px;
+    font-size: 12px;
 }
 
-#film-press .press-item {
-    margin-top: 8px;
+.press-item {
+    margin-top: 5px;
+}
+
+#film-press p {
+    font-size: 12px;
+    margin-bottom: 8px;
 }
 
 #film-press .press-pub {
     display: block;
     font-size: 0.75em;
     letter-spacing: 0.08em;
-    opacity: 0.6;
     text-transform: uppercase;
     margin-bottom: 2px;
 }
@@ -283,6 +291,10 @@
     .stills-grid {
         margin-top: 10px;
     }
+
+    .media-stills {
+        margin-top: 10px;
+    }
 }
 
 /*
@@ -311,4 +323,17 @@
     .content-container {
         flex: 0 2 40%;
     }
+
+    /* CSS GRID LAYOUT — pages with stills alongside content */
+    .media-grid {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: auto 1fr;
+        column-gap: 20px;
+        row-gap: 6px;
+    }
+
+    .media-grid .media-container   { grid-column: 1; grid-row: 1; }
+    .media-grid .media-stills      { grid-column: 1; grid-row: 2; }
+    .media-grid .content-container { grid-column: 2; grid-row: 1 / span 2; }
 }

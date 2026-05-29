@@ -12,6 +12,7 @@
     <link href="../css/header_style.css" rel="stylesheet">
     <link href="../css/main_style.css" rel="stylesheet">
     <link href="../css/narrative_style.css" rel="stylesheet">
+    <link href="../css/commercial_style.css" rel="stylesheet">
     <link href="../css/lewand_style.css" rel="stylesheet">
 </head>
 
@@ -131,10 +132,10 @@
 <div class="body-flex-container">
     <!-- HEADER OUTLINE -->
     <div class="body-flex-item"></div>
-    <!-- MAIN CONTENT -->
+
     <div class="main-flex-container body-flex-item">
-        <!-- PROJECT HEADER -->
-        <div class="main-flex-row lewand-info-row">
+        <div class="main-flex-row commercial-grid">
+            <!-- CONTENT -->
             <div class="content-container sub-body-flex-item">
                 <div class="content-flex-item" id="film-title">
                     <h4>UPCOMING COMMERCIAL</h4>
@@ -142,89 +143,25 @@
                     <h5>DIRECTOR</h5>
                 </div>
             </div>
-        </div>
-
-        <!-- DECK GRID: 3x4 = 12 pages -->
-        <div class="main-flex-row lewand-deck-row stills-section">
-        <div class="stills-grid" id="deck-grid">
-            <div class="still-item" data-page="1">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=1&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="2">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=2&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="3">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=3&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="4">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=4&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="5">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=5&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="6">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=6&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="7">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=7&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="8">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=8&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="9">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=9&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="10">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=10&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="11">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=11&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-            <div class="still-item" data-page="12">
-                <div class="deck-thumb-wrapper">
-                    <iframe data-src="https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=12&allowFullscreen=false" scrolling="no" frameborder="0" tabindex="-1"></iframe>
-                </div>
-            </div>
-        </div>
+            <!-- ALL PAGES GRID (populated by JS) -->
+            <div class="stills-grid media-stills" id="lw-grid"></div>
         </div>
     </div>
 </div>
 
 <!-- LIGHTBOX -->
-<div class="deck-lightbox" id="deck-lightbox">
-    <button class="deck-lightbox-close" id="deck-lightbox-close">&times;</button>
-    <div class="deck-lightbox-frame">
-        <iframe id="deck-lightbox-iframe" src="" frameborder="0" allowfullscreen></iframe>
-    </div>
+<div class="lw-lightbox" id="lw-lightbox">
+    <span class="lw-lightbox-close" id="lw-lightbox-close">&times;</span>
+    <span class="lw-lightbox-prev" id="lw-lightbox-prev">&#10094;</span>
+    <canvas id="lw-lightbox-canvas"></canvas>
+    <span class="lw-lightbox-next" id="lw-lightbox-next">&#10095;</span>
 </div>
 
 <script src="../js/script.js"></script>
 <script>
     (function () {
-        var gate = document.getElementById('password-gate');
-        var form = document.getElementById('password-form');
+        var gate  = document.getElementById('password-gate');
+        var form  = document.getElementById('password-form');
         var input = document.getElementById('password-input');
         var error = document.getElementById('password-error');
 
@@ -246,75 +183,96 @@
         });
     })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
     (function () {
-        var BASE_URL = 'https://indd.adobe.com/embed/e4bd3667-89d8-4b81-bcf6-c9043de10b1a?startpage=';
-        var THUMB_W = 1920;
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-        var lightbox = document.getElementById('deck-lightbox');
-        var lightboxIframe = document.getElementById('deck-lightbox-iframe');
-        var closeBtn = document.getElementById('deck-lightbox-close');
-        var thumbItems = document.querySelectorAll('.still-item');
+        var PDF_PATH    = '../assets/le-wand/LW-Pitch-Deck.pdf';
+        var grid        = document.getElementById('lw-grid');
+        var lightbox    = document.getElementById('lw-lightbox');
+        var lbCanvas    = document.getElementById('lw-lightbox-canvas');
+        var lbClose     = document.getElementById('lw-lightbox-close');
+        var lbPrev      = document.getElementById('lw-lightbox-prev');
+        var lbNext      = document.getElementById('lw-lightbox-next');
+        var pdfDoc      = null;
+        var currentPage = 1;
+        var lbRendering = false;
 
-        // Scale iframe thumbnails to fit their wrapper
-        function scaleThumbs() {
-            document.querySelectorAll('.deck-thumb-wrapper').forEach(function (wrapper) {
-                var iframe = wrapper.querySelector('iframe');
-                if (iframe) {
-                    var scale = wrapper.offsetWidth / THUMB_W;
-                    iframe.style.transform = 'scale(' + scale + ')';
-                }
+        function renderToCanvas(page, canvas, width) {
+            var vp1   = page.getViewport({ scale: 1 });
+            var scale = width / vp1.width;
+            var vp    = page.getViewport({ scale: scale });
+            canvas.width  = vp.width;
+            canvas.height = vp.height;
+            return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        }
+
+        function renderLightbox(num) {
+            if (lbRendering) return;
+            lbRendering = true;
+            currentPage = num;
+            pdfDoc.getPage(num).then(function (page) {
+                var vp1   = page.getViewport({ scale: 1 });
+                var scale = Math.min(window.innerWidth * 0.9 / vp1.width,
+                                     window.innerHeight * 0.9 / vp1.height);
+                var vp    = page.getViewport({ scale: scale });
+                lbCanvas.width  = vp.width;
+                lbCanvas.height = vp.height;
+                page.render({ canvasContext: lbCanvas.getContext('2d'), viewport: vp })
+                    .promise.then(function () { lbRendering = false; });
             });
         }
 
-        // Lazy-load iframe thumbnails as they scroll into view
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var iframe = entry.target.querySelector('iframe[data-src]');
-                    if (iframe) {
-                        iframe.src = iframe.dataset.src;
-                        delete iframe.dataset.src;
-                        observer.unobserve(entry.target);
-                        // Re-scale after load so transform is applied
-                        iframe.addEventListener('load', scaleThumbs, { once: true });
-                    }
-                }
-            });
-        }, { rootMargin: '200px' });
+        function openLightbox(num) {
+            renderLightbox(num);
+            lightbox.classList.add('active');
+        }
 
-        thumbItems.forEach(function (item) {
-            observer.observe(item);
+        pdfjsLib.getDocument(PDF_PATH).promise.then(function (pdf) {
+            pdfDoc = pdf;
+
+            // Render all pages into grid
+            for (var i = 1; i <= pdf.numPages; i++) {
+                (function (pageNum) {
+                    var a  = document.createElement('a');
+                    a.className = 'lw-page-item';
+                    a.href = '#';
+                    var cv = document.createElement('canvas');
+                    a.appendChild(cv);
+                    grid.appendChild(a);
+
+                    pdf.getPage(pageNum).then(function (page) {
+                        renderToCanvas(page, cv, cv.closest('.lw-page-item').clientWidth);
+                    });
+
+                    a.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        openLightbox(pageNum);
+                    });
+                })(i);
+            }
         });
 
-        window.addEventListener('resize', scaleThumbs);
-        window.addEventListener('load', scaleThumbs);
-
-        // Open lightbox at the clicked page
-        thumbItems.forEach(function (item) {
-            item.addEventListener('click', function () {
-                var page = item.dataset.page;
-                lightboxIframe.src = BASE_URL + page + '&allowFullscreen=true';
-                lightbox.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-
-        // Close lightbox
-        function closeLightbox() {
+        lbClose.addEventListener('click', function () {
             lightbox.classList.remove('active');
-            lightboxIframe.src = '';
-            document.body.style.overflow = '';
-        }
-
-        closeBtn.addEventListener('click', closeLightbox);
-
-        lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) closeLightbox();
         });
-
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+        lbPrev.addEventListener('click', function () {
+            if (currentPage > 1) renderLightbox(currentPage - 1);
+        });
+        lbNext.addEventListener('click', function () {
+            if (pdfDoc && currentPage < pdfDoc.numPages) renderLightbox(currentPage + 1);
+        });
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowLeft'  && currentPage > 1) renderLightbox(currentPage - 1);
+            if (e.key === 'ArrowRight' && pdfDoc && currentPage < pdfDoc.numPages)
+                renderLightbox(currentPage + 1);
         });
     })();
 </script>

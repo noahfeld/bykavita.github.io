@@ -69,6 +69,8 @@
         align-items: center;
         row-gap: 10px;
     }
+
+
 }
 
 /*
@@ -97,4 +99,15 @@
     .content-container {
         flex: 0 1 360px;
     }
+
+    /* TWO-COLUMN GRID: deck/grid left, content/title right */
+    .commercial-grid {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        column-gap: 20px;
+        align-items: start;
+    }
+
+    .commercial-grid > .stills-grid       { grid-column: 1; grid-row: 1; }
+    .commercial-grid > .content-container { grid-column: 2; grid-row: 1; }
 }

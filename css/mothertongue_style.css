@@ -1,0 +1,90 @@
+/*
+ *
+ * MOTHER TONGUE PAGE STYLING
+ *
+ */
+
+/* THUMBNAIL (page 1) */
+.mt-thumb-item {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+.mt-thumb-item canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mt-thumb-item:hover canvas {
+    transform: scale(1.02);
+    opacity: 0.85;
+}
+
+/* GRID ITEMS (pages 2-N) */
+.mt-page-item {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.mt-page-item canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mt-page-item:hover canvas {
+    transform: scale(1.03);
+    opacity: 0.85;
+}
+
+/* LIGHTBOX */
+.mt-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt-lightbox.active {
+    display: flex;
+}
+
+.mt-lightbox canvas {
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+.mt-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    line-height: 1;
+    user-select: none;
+}
+
+.mt-lightbox-prev,
+.mt-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 12px;
+    user-select: none;
+}
+
+.mt-lightbox-prev { left: 16px; }
+.mt-lightbox-next { right: 16px; }
