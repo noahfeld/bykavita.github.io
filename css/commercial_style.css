@@ -93,7 +93,17 @@
     }
 
     .media-container {
-        flex: 1 1 75%;
+        flex: 0 1 auto;
+    }
+
+    /* Constrain vertical (9:16) video to the viewport height so it
+       doesn't overflow the page; width follows from the aspect ratio. */
+    .media-container iframe {
+        width: auto !important;
+        height: calc(100vh - 120px);
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
     }
 
     .content-container {

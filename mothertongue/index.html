@@ -12,7 +12,6 @@
     <link href="../css/header_style.css" rel="stylesheet">
     <link href="../css/main_style.css" rel="stylesheet">
     <link href="../css/narrative_style.css" rel="stylesheet">
-    <link href="../css/mothertongue_style.css" rel="stylesheet">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -126,10 +125,10 @@
 
     <div class="main-flex-container body-flex-item">
         <div class="main-flex-row media-grid">
-            <!-- PAGE 1 THUMBNAIL -->
+            <!-- THUMBNAIL -->
             <div class="media-container sub-body-flex-item">
-                <a class="mt-thumb-item" id="mt-thumbnail" href="#">
-                    <canvas id="mt-thumb-canvas"></canvas>
+                <a class="still-item" href="#" data-index="0">
+                    <img src="../assets/mothertongue/MT-Thumbnail.png" alt="Mother Tongue" loading="lazy">
                 </a>
             </div>
             <!-- CONTENT -->
@@ -163,123 +162,117 @@
                     </div>
                 </div>
             </div>
-            <!-- PAGES 2-N GRID (populated by JS) -->
-            <div class="stills-grid media-stills" id="mt-grid"></div>
+            <!-- BTS STILLS GRID -->
+            <div class="stills-grid media-stills">
+                <a class="still-item" href="#" data-index="1">
+                    <img src="../assets/mothertongue/DSCF3092.jpg" alt="Mother Tongue behind the scenes 1" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="2">
+                    <img src="../assets/mothertongue/DSCF3096.jpg" alt="Mother Tongue behind the scenes 2" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="3">
+                    <img src="../assets/mothertongue/DSCF3129.jpg" alt="Mother Tongue behind the scenes 3" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="4">
+                    <img src="../assets/mothertongue/DSCF3190.jpg" alt="Mother Tongue behind the scenes 4" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="5">
+                    <img src="../assets/mothertongue/DSCF3236.jpg" alt="Mother Tongue behind the scenes 5" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="6">
+                    <img src="../assets/mothertongue/DSCF3258.jpg" alt="Mother Tongue behind the scenes 6" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="7">
+                    <img src="../assets/mothertongue/DSCF3261.jpg" alt="Mother Tongue behind the scenes 7" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="8">
+                    <img src="../assets/mothertongue/DSCF3378.jpg" alt="Mother Tongue behind the scenes 8" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="9">
+                    <img src="../assets/mothertongue/DSCF3387.jpg" alt="Mother Tongue behind the scenes 9" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="10">
+                    <img src="../assets/mothertongue/DSCF3426.jpg" alt="Mother Tongue behind the scenes 10" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="11">
+                    <img src="../assets/mothertongue/DSCF3526.jpg" alt="Mother Tongue behind the scenes 11" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="12">
+                    <img src="../assets/mothertongue/DSCF3596.jpg" alt="Mother Tongue behind the scenes 12" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="13">
+                    <img src="../assets/mothertongue/DSCF3601.jpg" alt="Mother Tongue behind the scenes 13" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="14">
+                    <img src="../assets/mothertongue/DSCF3624.jpg" alt="Mother Tongue behind the scenes 14" loading="lazy">
+                </a>
+                <a class="still-item" href="#" data-index="15">
+                    <img src="../assets/mothertongue/DSCF3650.jpg" alt="Mother Tongue behind the scenes 15" loading="lazy">
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div class="mt-lightbox" id="mt-lightbox">
-    <span class="mt-lightbox-close" id="mt-lightbox-close">&times;</span>
-    <span class="mt-lightbox-prev" id="mt-lightbox-prev">&#10094;</span>
-    <canvas id="mt-lightbox-canvas"></canvas>
-    <span class="mt-lightbox-next" id="mt-lightbox-next">&#10095;</span>
+<!-- LIGHTBOX OVERLAY -->
+<div class="lightbox-overlay" id="lightbox-overlay">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <span class="lightbox-prev" id="lightbox-prev">&#10094;</span>
+    <img id="lightbox-img" src="" alt="Still">
+    <span class="lightbox-next" id="lightbox-next">&#10095;</span>
 </div>
 
 <script src="../js/script.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
     (function () {
-        pdfjsLib.GlobalWorkerOptions.workerSrc =
-            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+        const overlay = document.getElementById('lightbox-overlay');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.getElementById('lightbox-close');
+        const prevBtn = document.getElementById('lightbox-prev');
+        const nextBtn = document.getElementById('lightbox-next');
+        const stills = Array.from(document.querySelectorAll('.still-item'));
+        let current = 0;
 
-        var PDF_PATH    = '../assets/mothertongue/MT-Pitch-Desk.pdf';
-        var thumbCanvas = document.getElementById('mt-thumb-canvas');
-        var grid        = document.getElementById('mt-grid');
-        var lightbox    = document.getElementById('mt-lightbox');
-        var lbCanvas    = document.getElementById('mt-lightbox-canvas');
-        var lbClose     = document.getElementById('mt-lightbox-close');
-        var lbPrev      = document.getElementById('mt-lightbox-prev');
-        var lbNext      = document.getElementById('mt-lightbox-next');
-        var pdfDoc      = null;
-        var currentPage = 1;
-        var lbRendering = false;
-
-        function renderToCanvas(page, canvas, width) {
-            var vp1   = page.getViewport({ scale: 1 });
-            var scale = width / vp1.width;
-            var vp    = page.getViewport({ scale: scale });
-            canvas.width  = vp.width;
-            canvas.height = vp.height;
-            return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        function open(index) {
+            current = index;
+            lightboxImg.src = stills[current].querySelector('img').src;
+            overlay.classList.add('active');
         }
 
-        function renderLightbox(num) {
-            if (lbRendering) return;
-            lbRendering = true;
-            currentPage = num;
-            pdfDoc.getPage(num).then(function (page) {
-                var vp1   = page.getViewport({ scale: 1 });
-                var scale = Math.min(window.innerWidth * 0.9 / vp1.width,
-                                     window.innerHeight * 0.9 / vp1.height);
-                var vp    = page.getViewport({ scale: scale });
-                lbCanvas.width  = vp.width;
-                lbCanvas.height = vp.height;
-                page.render({ canvasContext: lbCanvas.getContext('2d'), viewport: vp })
-                    .promise.then(function () { lbRendering = false; });
+        function close() {
+            overlay.classList.remove('active');
+        }
+
+        function prev() {
+            current = (current - 1 + stills.length) % stills.length;
+            lightboxImg.src = stills[current].querySelector('img').src;
+        }
+
+        function next() {
+            current = (current + 1) % stills.length;
+            lightboxImg.src = stills[current].querySelector('img').src;
+        }
+
+        stills.forEach(function (still, i) {
+            still.addEventListener('click', function (e) {
+                e.preventDefault();
+                open(i);
             });
-        }
-
-        function openLightbox(num) {
-            renderLightbox(num);
-            lightbox.classList.add('active');
-        }
-
-        pdfjsLib.getDocument(PDF_PATH).promise.then(function (pdf) {
-            pdfDoc = pdf;
-
-            // Render page 1 as thumbnail
-            pdf.getPage(1).then(function (page) {
-                renderToCanvas(page, thumbCanvas,
-                    thumbCanvas.closest('.media-container').clientWidth);
-            });
-
-            // Render pages 2-N into grid
-            for (var i = 2; i <= pdf.numPages; i++) {
-                (function (pageNum) {
-                    var a  = document.createElement('a');
-                    a.className = 'mt-page-item';
-                    a.href = '#';
-                    var cv = document.createElement('canvas');
-                    a.appendChild(cv);
-                    grid.appendChild(a);
-
-                    pdf.getPage(pageNum).then(function (page) {
-                        renderToCanvas(page, cv, cv.closest('.mt-page-item').clientWidth);
-                    });
-
-                    a.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        openLightbox(pageNum);
-                    });
-                })(i);
-            }
         });
 
-        document.getElementById('mt-thumbnail').addEventListener('click', function (e) {
-            e.preventDefault();
-            openLightbox(1);
+        closeBtn.addEventListener('click', close);
+        prevBtn.addEventListener('click', prev);
+        nextBtn.addEventListener('click', next);
+
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) close();
         });
 
-        lbClose.addEventListener('click', function () {
-            lightbox.classList.remove('active');
-        });
-        lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) lightbox.classList.remove('active');
-        });
-        lbPrev.addEventListener('click', function () {
-            if (currentPage > 1) renderLightbox(currentPage - 1);
-        });
-        lbNext.addEventListener('click', function () {
-            if (pdfDoc && currentPage < pdfDoc.numPages) renderLightbox(currentPage + 1);
-        });
         document.addEventListener('keydown', function (e) {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') lightbox.classList.remove('active');
-            if (e.key === 'ArrowLeft'  && currentPage > 1) renderLightbox(currentPage - 1);
-            if (e.key === 'ArrowRight' && pdfDoc && currentPage < pdfDoc.numPages)
-                renderLightbox(currentPage + 1);
+            if (!overlay.classList.contains('active')) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowLeft') prev();
+            if (e.key === 'ArrowRight') next();
         });
     })();
 </script>

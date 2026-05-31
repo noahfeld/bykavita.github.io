@@ -102,7 +102,7 @@ document.querySelectorAll('.hover-item').forEach(item => {
     var grid = document.querySelector('.section-flex-container');
     if (!grid) return;
 
-    var GAP = 47; // visual gap between cards (px)
+    var GAP = 70; // visual gap between cards (px)
     var ro  = null;
 
     function setSpan(item) {
@@ -137,4 +137,36 @@ document.querySelectorAll('.hover-item').forEach(item => {
             startObserver(); // no-op if already started
         }
     });
+})();
+
+// SLIGHT PER-CARD OFFSET (index page only)
+// Nudges each card a few px in x/y so the masonry grid feels less rigid.
+// Applied as a translate (visual only) so grid row spans stay accurate.
+(function () {
+    var items = document.querySelectorAll('.section-flex-container .section-flex-item');
+    if (!items.length) return;
+
+    function rand(max) { return (Math.random() * 2 - 1) * max; }
+
+    // Stable offset per card, generated once.
+    var offsets = [];
+    items.forEach(function () {
+        offsets.push({ x: rand(22).toFixed(1) + 'px', y: rand(30).toFixed(1) + 'px' });
+    });
+
+    function applyOffsets() {
+        var on = window.innerWidth > 950;
+        items.forEach(function (item, i) {
+            if (on) {
+                item.style.setProperty('--rx', offsets[i].x);
+                item.style.setProperty('--ry', offsets[i].y);
+            } else {
+                item.style.removeProperty('--rx');
+                item.style.removeProperty('--ry');
+            }
+        });
+    }
+
+    applyOffsets();
+    window.addEventListener('resize', applyOffsets);
 })();
